@@ -15,6 +15,7 @@ The Dock python class (in ```dock.py```) contains the logic to automatically con
 ### Initial Configuration
 
 The Axon Dock configuration parameters must be described in an YAML file, which will be read by the main program.
+This repository includes ```config.yaml``` as an example.
 
 The configuration parameters are self-explanatory:
 
