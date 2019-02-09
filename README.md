@@ -5,125 +5,42 @@ The Dock python class (in ```dock.py ```) allows to configure an Axon Dock to wo
 
 ## Installing / Getting started
 
-1. Install python3 see (https://realpython.com/installing-python/)
-2. Install Chrome WebDriver ( see http://chromedriver.chromium.org/home)
-3. Install Selenium and Pyyaml libraries 
+1. Install Chrome browser on your platform
+2. Install python3 see (https://realpython.com/installing-python/)
+3. Install Chrome WebDriver ( see http://chromedriver.chromium.org/home)
+4. Install Selenium and Pyyaml libraries 
 
-    ```pip3 install < requirements.txt```
-
-Here you should say what actually happens when you execute the code above.
+	```$ pip3 install < requirements.txt```
 
 ### Initial Configuration
 
-Some projects require initial configuration (e.g. access tokens or keys, `npm i`).
-This is the section where you would document those requirements.
+The Axon Dock configuration parameters must be described in an YAML file, which will be read by the main program.
 
-## Developing
+The configuration parameters are self-explanatory:
 
-Here's a brief intro about what a developer must do in order to start developing
-the project further:
-
-```shell
-git clone https://github.com/your/awesome-project.git
-cd awesome-project/
-packagemanager install
-```
-
-And state what happens step-by-step.
-
-### Building
-
-If your project needs some additional steps for the developer to build the
-project after some code changes, state them here:
-
-```shell
-./configure
-make
-make install
-```
-
-Here again you should state what actually happens when the code above gets
-executed.
-
-### Deploying / Publishing
-
-In case there's some step you have to take that publishes this project to a
-server, this is the right time to state it.
-
-```shell
-packagemanager deploy awesome-project -s server.com -u username -p password
-```
-
-And again you'd need to tell what the previous code actually does.
-
-## Features
-
-What's all the bells and whistles this project can perform?
-* What's the main functionality
-* You can also do another thing
-* If you get really randy, you can even do this
-
-## Configuration
-
-Here you should write what are all of the configurations a user can enter when
-using the project.
-
-#### Argument 1
-Type: `String`  
-Default: `'default value'`
-
-State what an argument does and how you can use it. If needed, you can provide
-an example below.
-
-Example:
-```bash
-awesome-project "Some other value"  # Prints "You're nailing this readme!"
-```
-
-#### Argument 2
-Type: `Number|Boolean`  
-Default: 100
-
-Copy-paste as many of these as you need.
-
-## Contributing
-
-When you publish something open source, one of the greatest motivations is that
-anyone can just jump in and start contributing to your project.
-
-These paragraphs are meant to welcome those kind souls to feel that they are
-needed. You should state something like:
-
-"If you'd like to contribute, please fork the repository and use a feature
-branch. Pull requests are warmly welcome."
-
-If there's anything else the developer needs to know (e.g. the code style
-guide), you should link it here. If there's a lot of things to take into
-consideration, it is common to separate this section to its own file called
-`CONTRIBUTING.md` (or similar). If so, you should say that it exists here.
-
-## Links
-
-Even though this information can be found inside the project on machine-readable
-format like in a .json file, it's good to include a summary of most useful
-links to humans using your project. You can include links like:
-
-- Project homepage: https://your.github.com/awesome-project/
-- Repository: https://github.com/your/awesome-project/
-- Issue tracker: https://github.com/your/awesome-project/issues
-  - In case of sensitive bugs like security vulnerabilities, please contact
-    my@email.com directly instead of using issue tracker. We value your effort
-    to improve the security and privacy of this project!
-- Related projects:
-  - Your other project: https://github.com/your/other-project/
-  - Someone else's project: https://github.com/someones/awesome-project/
+- name -  *Name assigned to the Axon Dock*
+- location - *Location of the Dock inside the agency (i.e. “Armory Room”)
+- dock_login - *login username for the Dock*
+- dock_passwd - *login password for the Dock*
+- dynamic - *Whether the Dock uses static or dynamic (DHCP) IP assignment - Value must be True or False*
+- ip_address - *IP address of the Dock*
+- netmask - *IP netmaks*
+- gateway_ip - *Default gateway IP address* 
+- dns_server_1 - *First DNS Server to be queried*
+- dns_server_2 - *Second DNS Server to be queried*
+- ecom_url:  - “URL of the evidence.com or Axon Commander instance*
+- ecom_login: - *Evidence.com or Axon Commander administrator login username*
+- ecom_passwd: - *Evidence.com or Axon Commander administrator login password*
 
 
-## Licensing
+## Usage Example
 
-One really important part: Give your project a proper license. Here you should
-state what the license is and how to find the text version of the license.
-Something like:
+1. Connect the dock LAN port to your PC ethernet port. 
+2. Configure PC’s ethernet IP address on the network 10.10.1.x/24 (10.10.1.1 is the Dock default address)
+3. Execute test program ```dock_config.py```
 
-"The code in this project is licensed under MIT license."
+	```$ python3 dock_config.py -f config.yaml```
+
+This sample program will open a Chrome bowser window and will configure the dock with the parameters described in the ```config.yaml``` YAML file.
+
 

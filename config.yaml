@@ -8,8 +8,8 @@ netmask: 255.255.255.0
 gateway_ip: 192.168.5.2
 dns_server_1: 192.168.5.2
 dns_server_2:
-ecom_url: demo.eu.evidence.com  
-ecom_login: *******
-ecom_passwd: '******'
+ecom_url: ***** 
+ecom_login: *****
+ecom_passwd: '*****'
 
 
