@@ -1,7 +1,7 @@
 # DockBot
 > An attempt to automate Axon Dock configuration
 
-The Dock python class (in ```dock.py ```) allows to configure an Axon Dock to work with Evidence.com or Axon Commander. 
+The Dock python class (in ```dock.py```) contains the logic to automatically configure an Axon Dock to work with Evidence.com or Axon Commander. 
 
 ## Installing / Getting started
 
